@@ -22,20 +22,20 @@ import com.phonebook.repository.ContactRepository;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1")
-public class ContatController {
+public class ContactController {
 
 	@Autowired
 	private ContactRepository contactRepository;
 	
 	
-	// get all contacts
+	//	get all contacts
 	@GetMapping("/contacts")
-	public List<Contact> getAllContacs() {
+	public List<Contact> getAllContacts() {
 		return contactRepository.findAll();	
 	}
 	
 	
-	// create contact
+	// save contact
 	@PostMapping("/contact")
 	public Contact saveContact(@RequestBody Contact contact){
 		Long contactId = contact.getContactId();
@@ -58,7 +58,7 @@ public class ContatController {
 	}
 	
 	
-	// delete contact 
+	// delete contact
 	@DeleteMapping("/contact/{id}")
 	public ResponseEntity<Map<String, Boolean>> deleteContact(@PathVariable Long id){
 		Contact contact = contactRepository.findById(id)
