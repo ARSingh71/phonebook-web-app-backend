@@ -19,7 +19,7 @@ import com.phonebook.exception.ResourceNotFoundException;
 import com.phonebook.model.Contact;
 import com.phonebook.repository.ContactRepository;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "")
 @RestController
 @RequestMapping("/api/v1")
 public class ContactController {
